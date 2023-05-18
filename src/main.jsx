@@ -17,6 +17,7 @@ import Register from './components/Register/Register.jsx';
 import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import Login from './components/Login/Login.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
+import SingleToy from './components/SingleToy/SingleToy.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
       {
         path: 'alltoys',
         element: <AllToys></AllToys>
+      },
+      {
+        path: 'singleToy/:id',
+        element: <SingleToy></SingleToy>,
+        loader: ({params})=> fetch(`http://localhost:3000/singletoy/${params.id}`)
       },
       {
         path: 'mytoys',

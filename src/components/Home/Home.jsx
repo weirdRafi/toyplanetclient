@@ -21,12 +21,14 @@ const Home = () => {
             </section>
 
             <section className='mt-5 mb-5'>
-                 <h1 className='text-4xl font-bold mt-5 mb-5 text-center'>Shop by Category</h1>
-                <Tabs className='text-center'>
+                <h1 className='text-4xl font-bold mt-5 mb-5 text-center'>Shop by Category</h1>
+                <Tabs className='text-center mx-auto'>
                     <TabList>
-                        <Tab>Title 1</Tab>
-                        <Tab>Title 2</Tab>
-                        <Tab>Title 3</Tab>
+                        <div className='flex gap-10 justify-center mb-4'>
+                            <Tab className= 'select-error hover:bg-purple-400 hover:cursor-pointer p-3 rounded-xl'>Raching Cars</Tab>
+                            <Tab className=' select-error hover:bg-purple-400 hover:cursor-pointer p-3 rounded-xl'>Classic Cars</Tab>
+                            <Tab className= 'select-error hover:bg-purple-400 hover:cursor-pointer p-3 rounded-xl'>Fire Trucks</Tab>
+                        </div>
                     </TabList>
 
                     <TabPanel>

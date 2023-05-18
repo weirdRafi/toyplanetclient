@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const AddAToy = () => {
-    const handleAddToy= event =>{
+
+    const { user } = useContext(AuthContext)
+
+
+    const handleAddToy = event => {
         event.preventDefault();
         const form = event.target;
         const url = form.pictureUrl.value;
@@ -29,7 +34,21 @@ const AddAToy = () => {
 
         console.log(user);
 
-        
+        fetch('http://localhost:3000/upload', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    alert('Successfully Ordered')
+                }
+            }) 
+
 
 
     }
@@ -73,6 +92,7 @@ const AddAToy = () => {
                             id="sellerName"
                             name="sellerName"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-purple-500"
+                            value={user?.displayName}
                             placeholder="Enter the seller name (if available)"
                         />
                     </div>
@@ -85,6 +105,7 @@ const AddAToy = () => {
                             id="sellerEmail"
                             name="sellerEmail"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-purple-500"
+                            value={user?.email}
                             placeholder="Enter the seller email"
                         />
                     </div>
@@ -99,9 +120,9 @@ const AddAToy = () => {
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-purple-500"
                     >
                         <option value="">Select a sub-category</option>
-                        <option value="mathToys">Math Toys</option>
-                        <option value="languageToys">Language Toys</option>
-                        <option value="scienceToys">Science Toys</option>
+                        <option value="racingCars">Racing Cars</option>
+                        <option value="classicCars">Classic Cars</option>
+                        <option value="fireTrucks">Fire Trucks</option>
                     </select>
                 </div>
                 <div className="grid grid-cols-2 gap-6 mb-6">
@@ -160,8 +181,8 @@ const AddAToy = () => {
                         value='Add Toy'
                         className="w-full bg-purple-500 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
                     />
-                        
-                    
+
+
                 </div>
             </form>
         </div>
