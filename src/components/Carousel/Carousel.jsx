@@ -10,7 +10,8 @@ const Carousel = () => {
                 <div className='flex items-center '>
                     <div className='mr-32 md:text-3xl ml-10'>
                         <h1 className='text-4xl font-bold'>ToyCars</h1>
-                        <p className='text-xl'>Toy cars are miniature replicas of <br /> real automobiles designed for play and entertainment purposes</p>
+                        <p className='text-xl mt-5'>Toy cars are miniature replicas of <br /> real automobiles designed for play and entertainment purposes</p>
+                        <button className='btn bg-purple-700 mt-5'>Show More</button>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide4" className="btn btn-circle">❮</a>
@@ -23,7 +24,8 @@ const Carousel = () => {
                 <div className='flex items-center'>
                     <div className='mr-32 md:text-3xl  ml-10'>
                         <h1 className='text-4xl font-bold'>ToyCars</h1>
-                        <p className='text-xl'>Toy cars are miniature replicas of <br /> real automobiles designed for play and entertainment purposes</p>
+                        <p className='text-xl mt-5'>Toy cars are miniature replicas of <br /> real automobiles designed for play and entertainment purposes</p>
+                        <button className='btn bg-purple-700 mt-5'>Show More</button>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide1" className="btn btn-circle">❮</a>
@@ -36,7 +38,8 @@ const Carousel = () => {
                 <div className='flex items-center'>
                     <div className='mr-32 md:text-3xl  ml-10'>
                         <h1 className='text-4xl font-bold'>ToyCars</h1>
-                        <p className='text-xl'>Toy cars are miniature replicas of <br /> real automobiles designed for play and entertainment purposes</p>
+                        <p className='text-xl mt-5'>Toy cars are miniature replicas of <br /> real automobiles designed for play and entertainment purposes</p>
+                        <button className='btn bg-purple-700 mt-5'>Show More</button>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide2" className="btn btn-circle">❮</a>
@@ -49,7 +52,8 @@ const Carousel = () => {
                 <div className='flex items-center'>
                     <div className='mr-32 md:text-3xl ml-10'>
                         <h1 className='text-4xl font-bold'>ToyCars</h1>
-                        <p className='text-xl'>Toy cars are miniature replicas of <br /> real automobiles designed for play and entertainment purposes</p>
+                        <p className='text-xl mt-5'>Toy cars are miniature replicas of <br /> real automobiles designed for play and entertainment purposes</p>
+                        <button className='btn bg-purple-700 mt-5'>Show More</button>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide3" className="btn btn-circle">❮</a>
