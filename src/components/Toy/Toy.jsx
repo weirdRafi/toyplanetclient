@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Toy = ({ toy }) => {
-    const { url, name, sellerName, sellerEmail, subcategory, price, rating, quantity, description } = toy || {};
+    const { _id, url, name, price, rating } = toy || {};
+
     return (
         <div>
             <div className="w-96 mx-auto mt-5 mb-5 bg-white shadow-md rounded-lg overflow-hidden">
@@ -20,7 +21,7 @@ const Toy = ({ toy }) => {
                     
                 </div>
                 <div className='text-center'>
-                    <Link to='/alltoys' className='btn bg-purple-700 w-full'>View Details</Link>
+                    <Link to={`singleToy/${toy._id}`} className='btn bg-purple-700 w-full'>View Details</Link>
                 </div>
             </div>
         </div>
