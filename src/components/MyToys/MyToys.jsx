@@ -17,7 +17,7 @@ const MyToys = () => {
 
             setMytoys(data);
         })
-    },[])
+    },[url])
 
     const handleDelete = (_id) => {
         console.log(_id);

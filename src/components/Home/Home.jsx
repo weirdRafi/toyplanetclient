@@ -2,6 +2,7 @@ import React from 'react';
 import Carousel from '../Carousel/Carousel';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import Subcategory from '../Subcategory/Subcategory';
 
 const Home = () => {
     return (
@@ -19,29 +20,8 @@ const Home = () => {
                 </div>
 
             </section>
-
-            <section className='mt-5 mb-5'>
-                <h1 className='text-4xl font-bold mt-5 mb-5 text-center'>Shop by Category</h1>
-                <Tabs className='text-center mx-auto'>
-                    <TabList>
-                        <div className='flex gap-10 justify-center mb-4'>
-                            <Tab className= 'select-error hover:bg-purple-400 hover:cursor-pointer p-3 rounded-xl'>Raching Cars</Tab>
-                            <Tab className=' select-error hover:bg-purple-400 hover:cursor-pointer p-3 rounded-xl'>Classic Cars</Tab>
-                            <Tab className= 'select-error hover:bg-purple-400 hover:cursor-pointer p-3 rounded-xl'>Fire Trucks</Tab>
-                        </div>
-                    </TabList>
-
-                    <TabPanel>
-                        <h2>Any content 1</h2>
-                    </TabPanel>
-                    <TabPanel>
-                        <h2>Any content 2</h2>
-                    </TabPanel>
-                    <TabPanel>
-                        <h2>Any content 3</h2>
-                    </TabPanel>
-                </Tabs>
-            </section>
+            <Subcategory></Subcategory>
+            
         </div>
     );
 };
