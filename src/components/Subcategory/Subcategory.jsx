@@ -6,7 +6,7 @@ import Toy from '../Toy/Toy';
 const Subcategory = () => {
 
     const [toys, setToys] = useState([]);
-    const [active, setActive] = useState("");
+    const [active, setActive] = useState("classicCars");
     
 
     useEffect(() => {

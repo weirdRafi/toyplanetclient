@@ -137,7 +137,7 @@ const AddAToy = () => {
                             Price
                         </label>
                         <input
-                            type="number"
+                            type="text"
                             id="price"
                             name="price"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-purple-500"
@@ -149,7 +149,7 @@ const AddAToy = () => {
                             Rating
                         </label>
                         <input
-                            type="number"
+                            type="text"
                             id="rating"
                             name="rating"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-purple-500"
@@ -162,7 +162,7 @@ const AddAToy = () => {
                         Available Quantity
                     </label>
                     <input
-                        type="number"
+                        type="text"
                         id="quantity"
                         name="quantity"
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-purple-500"
