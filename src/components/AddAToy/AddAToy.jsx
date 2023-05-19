@@ -25,7 +25,6 @@ const AddAToy = () => {
             url,
             name,
             sellerName,
-            sellerName,
             sellerEmail,
             subcategory,
             price,
@@ -49,7 +48,7 @@ const AddAToy = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Successfully Added',
+                        text: 'Successfully Created!',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                       })

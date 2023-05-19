@@ -26,7 +26,7 @@ const SingleToy = () => {
                 </p>
             </div>
             <div className='text-center'>
-                <Link to='/alltoys' className='btn bg-purple-700 w-full'>Back to My Toys</Link>
+                <Link to='/alltoys' className='btn bg-purple-700 w-full'>Back to All Toys</Link>
             </div>
         </div>
     );

@@ -18,6 +18,8 @@ import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import Login from './components/Login/Login.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import SingleToy from './components/SingleToy/SingleToy.jsx';
+import Update from './components/Update/Update.jsx';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -35,16 +37,21 @@ const router = createBrowserRouter([
       },
       {
         path: 'singleToy/:id',
-        element: <SingleToy></SingleToy>,
+        element: <PrivateRoute><SingleToy></SingleToy></PrivateRoute>,
         loader: ({params})=> fetch(`http://localhost:3000/singletoy/${params.id}`)
       },
       {
         path: 'mytoys',
-        element: <MyToys></MyToys>
+        element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
+      },
+      {
+        path: 'update/:id',
+        element: <Update></Update>,
+        loader: ({params}) => fetch(`http://localhost:3000/singletoy/${params.id}`)
       },
       {
         path: 'addatoy',
-        element: <AddAToy></AddAToy>
+        element: <PrivateRoute><AddAToy></AddAToy></PrivateRoute>
       },
       {
         path: 'blogs',

@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const { loginUser} = useContext(AuthContext)
@@ -17,10 +18,15 @@ const Login = () => {
         signInWithPopup(auth, googleProvider)
             .then(result => {
                 const loggedInUser = result.user
-                
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Successfully Loged In!!',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
             })
             .catch(error => {
-                console.log(error);
+                setError(error);
             })
     }
 
