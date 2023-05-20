@@ -23,7 +23,7 @@ const Rivew = () => {
                         <div className="flex items-center mb-4">
                             <img
                                 className="w-10 h-10 rounded-full mr-3"
-                                src="https://img.freepik.com/free-photo/portrait-expressive-young-man-wearing-formal-suit_273609-6942.jpg?size=626&ext=jpg&ga=GA1.1.1418461367.1666450931&semt=ais" 
+                                src="https://media.istockphoto.com/id/831902158/photo/confidence-got-him-to-the-top.jpg?b=1&s=170667a&w=0&k=20&c=eHQlX5SQWO0Oes1VQd_OEpe8FJzYsSGNWUdUd_OH99U=" 
                                 alt="Client"
                             />
                             <p className="text-white font-semibold">Jane Smith</p>
@@ -36,7 +36,7 @@ const Rivew = () => {
                         <div className="flex items-center mb-4">
                             <img
                                 className="w-10 h-10 rounded-full mr-3"
-                                src="https://img.freepik.com/free-photo/portrait-expressive-young-man-wearing-formal-suit_273609-6942.jpg?size=626&ext=jpg&ga=GA1.1.1418461367.1666450931&semt=ais" 
+                                src="https://media.istockphoto.com/id/1399565382/photo/young-happy-mixed-race-businessman-standing-with-his-arms-crossed-working-alone-in-an-office.jpg?b=1&s=170667a&w=0&k=20&c=ZAXJYLesh6gSd9huAgpy6rjpR4z-IFVH9MpxrKIXCrs=" 
                                 alt="Client"
                             />
                             <p className="text-white font-semibold">David Williams</p>

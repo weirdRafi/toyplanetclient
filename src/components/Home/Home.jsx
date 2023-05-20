@@ -11,7 +11,7 @@ import Rivew from '../Rivew/Rivew';
 const Home = () => {
     useEffect(() => {
         AOS.init({
-            duration: 2000, // Set the duration for animations (in milliseconds)
+            duration: 1000, // Set the duration for animations (in milliseconds)
             once: true, // Enable animations only once
             easing: 'ease-in-out', // Set the easing function for animations
             // Additional configuration options for AOS can be added here
