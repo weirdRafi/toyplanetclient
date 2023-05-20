@@ -6,6 +6,7 @@ import SwiperAutoPlay from '../SwiperAutoPlay/SwiperAutoPlay';
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Rivew from '../Rivew/Rivew';
 
 const Home = () => {
     useEffect(() => {
@@ -48,6 +49,7 @@ const Home = () => {
             </section>
             <Subcategory></Subcategory>
             <SwiperAutoPlay></SwiperAutoPlay>
+            <Rivew></Rivew>
         </div>
     );
 };

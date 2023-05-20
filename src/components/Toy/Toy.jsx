@@ -6,9 +6,9 @@ const Toy = ({ toy }) => {
 
     return (
         <div>
-            <div className="w-96 mx-auto mt-5 mb-5 bg-white shadow-md rounded-lg overflow-hidden">
+            <div className="w-72 border-2 mx-auto mt-5 mb-5 bg-white shadow-md rounded-lg overflow-hidden">
                 <img
-                    className="object-cover w-full h-48"
+                    className="object-cover w-full h-48 p-3"
                     src={url}
                     alt="Toy"
                 />
