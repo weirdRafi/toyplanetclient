@@ -4,6 +4,8 @@ import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 const Login = () => {
     const { loginUser} = useContext(AuthContext)
@@ -50,9 +52,16 @@ const Login = () => {
             loginUser(email, password)
                 .then(result => {
                     const loggedUser = result.user;
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Successfully Loged In!!',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                      })
                     navigate(from, { replace: true })
                     setError('')
                     form.reset()
+                    
                 })
                 .catch(error => {
                     setError(error.message)
@@ -92,7 +101,7 @@ const Login = () => {
                     <div className="flex items-center justify-between">
                         <input
                             type="submit"
-                            value='Sign In'
+                            value='Log In'
                             className="bg-purple-500 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
                         />
 
@@ -103,7 +112,7 @@ const Login = () => {
                     </div>
                 </form>
                 <div className='text-center mt-5'>
-                <button onClick={handleGoogleSignIn} className="btn btn-outline btn-error">Login With Google</button>
+                <button onClick={handleGoogleSignIn} className="btn btn-outline text-purple-700"> <FontAwesomeIcon icon={faGoogle} style={{ fontSize: 30}} className="text-center text-purple-500" /> &nbsp;  Login With Google</button>
                 </div>
             </div>
         </div>

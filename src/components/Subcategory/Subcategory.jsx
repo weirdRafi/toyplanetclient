@@ -23,7 +23,7 @@ const Subcategory = () => {
 
     return (
         <section className='mt-10 mb-5'>
-            <h1 className='text-4xl font-bold mt-10 mb-10 text-center'>Shop by Category</h1>
+            <h1 className='text-4xl font-bold mt-10 mb-10 text-center text-purple-700'>Shop by Category</h1>
 
 
             <div>

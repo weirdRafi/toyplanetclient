@@ -4,51 +4,98 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const MyToys = () => {
-    const {user}= useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const [mytoys, setMytoys] = useState([])
 
     const url = `http://localhost:3000/alltoys?sellerEmail=${user.email}`
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         fetch(url)
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data);
-
-            setMytoys(data);
-        })
-    },[url])
-
-    const handleDelete = (_id) => {
-        console.log(_id);
-        fetch(`http://localhost:3000/sigletoy/${_id}`, {
-            method: 'DELETE'
-        })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.deletedCount > 0) {
-                    Swal.fire({
-                        title: 'Are you sure?',
-                        text: "You won't be able to revert this!",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Yes, delete it!'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
+
+                setMytoys(data);
+            })
+    }, [url])
+
+    const handleDelete = (_id) => {
+
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+             
+                fetch(`http://localhost:3000/sigletoy/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
                             Swal.fire(
                                 'Deleted!',
-                                'Your file has been deleted.',
+                                'Your Toy has been deleted.',
                                 'success'
                             )
-                            const remaining = mytoys.filter(mytoy => mytoy._id !== _id)
-                            setMytoys(remaining)
                         }
                     })
-                }
-            })
+                const remaining = mytoys.filter(mytoy => mytoy._id !== _id)
+                setMytoys(remaining)
+            }
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // console.log(_id);
+        // fetch(`http://localhost:3000/sigletoy/${_id}`, {
+        //     method: 'DELETE'
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         if (data.deletedCount > 0) {
+        //             Swal.fire({
+        //                 title: 'Are you sure?',
+        //                 text: "You won't be able to revert this!",
+        //                 icon: 'warning',
+        //                 showCancelButton: true,
+        //                 confirmButtonColor: '#3085d6',
+        //                 cancelButtonColor: '#d33',
+        //                 confirmButtonText: 'Yes, delete it!'
+        //             }).then((result) => {
+        //                 if (result.isConfirmed) {
+        //                     Swal.fire(
+        //                         'Deleted!',
+        //                         'Your file has been deleted.',
+        //                         'success'
+        //                     )
+        //                     const remaining = mytoys.filter(mytoy => mytoy._id !== _id)
+        //                     setMytoys(remaining)
+        //                 }
+        //             })
+        //         }
+        //     })
     }
 
     return (

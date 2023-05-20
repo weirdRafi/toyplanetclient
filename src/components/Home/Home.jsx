@@ -10,7 +10,7 @@ import 'aos/dist/aos.css';
 const Home = () => {
     useEffect(() => {
         AOS.init({
-            duration: 3000, // Set the duration for animations (in milliseconds)
+            duration: 2000, // Set the duration for animations (in milliseconds)
             once: true, // Enable animations only once
             easing: 'ease-in-out', // Set the easing function for animations
             // Additional configuration options for AOS can be added here
@@ -21,8 +21,8 @@ const Home = () => {
             <h1 className='text-purple-700 text-2xl text-center mt-5 font-bold'>Welcome To ToyPlanet!!</h1>
         </div>
             <Carousel></Carousel>
-            <section className='mt-5'>
-                <h1 className='text-4xl font-bold mt-5 mb-5 text-center text-purple-700'>Gellary section</h1>
+            <section className='mt-10'>
+                <h1 className='text-4xl font-bold mt-5 mb-10 text-center text-purple-700'>Gellary section</h1>
                 <div className='grid md:grid-cols-3 mx-auto gap-2'>
                     <div data-aos="fade-down">
                         <img className=' rounded-lg border-4 shadow-xl w-96 h-64 p-5' src="/public/img8.jpg" alt="" />
