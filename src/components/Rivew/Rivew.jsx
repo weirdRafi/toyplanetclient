@@ -6,7 +6,7 @@ const Rivew = () => {
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-4xl font-bold text-purple-700 text-center mb-8">Client Reviews</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="bg-purple-700 shadow rounded-lg p-6">
+                    <div className="bg-purple-500 shadow rounded-lg p-6">
                         <div className="flex items-center mb-4">
                             <img
                                 className="w-10 h-10 rounded-full mr-3"
@@ -19,7 +19,7 @@ const Rivew = () => {
                             "I recently purchased the "Super Speed Racer" toy car for my son, and it has exceeded all expectations. This toy car delivers a thrilling racing experience that keeps my son entertained for hours."
                         </p>
                     </div>
-                    <div className="bg-purple-700 shadow rounded-lg p-6">
+                    <div className="bg-purple-500 shadow rounded-lg p-6">
                         <div className="flex items-center mb-4">
                             <img
                                 className="w-10 h-10 rounded-full mr-3"
@@ -32,7 +32,7 @@ const Rivew = () => {
                             "I recently purchased the "Super Speed Racer" toy car for my son, and it has exceeded all expectations. This toy car delivers a thrilling racing experience that keeps my son entertained for hours."
                         </p>
                     </div>
-                    <div className="bg-purple-700 shadow rounded-lg p-6">
+                    <div className="bg-purple-500 shadow rounded-lg p-6">
                         <div className="flex items-center mb-4">
                             <img
                                 className="w-10 h-10 rounded-full mr-3"

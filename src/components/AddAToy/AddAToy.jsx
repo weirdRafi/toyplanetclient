@@ -60,10 +60,10 @@ const AddAToy = () => {
 
     }
     return (
-        <div className="w-2/3 mx-auto p-8 bg-white rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6">Add New Toy</h2>
+        <div className="w-2/3 mx-auto p-8 bg-white rounded-lg shadow-md mb-5">
+            <h2 className="text-3xl font-semibold text-center text-purple-500 mb-3">Add New Toy</h2>
             <form onSubmit={handleAddToy}>
-                <div className="grid grid-cols-2 gap-6 mb-6">
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div className="mb-6">
                         <label htmlFor="pictureUrl" className="block text-gray-700 text-sm font-medium mb-1">
                             Picture URL of the toy
@@ -89,7 +89,7 @@ const AddAToy = () => {
                         />
                     </div>
                 </div>
-                <div className="grid grid-cols-2 gap-6 mb-6">
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div className="mb-6">
                         <label htmlFor="sellerName" className="block text-gray-700 text-sm font-medium mb-1">
                             Seller Name
@@ -132,7 +132,7 @@ const AddAToy = () => {
                         <option value="fireTrucks">Fire Trucks</option>
                     </select>
                 </div>
-                <div className="grid grid-cols-2 gap-6 mb-6">
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label htmlFor="price" className="block text-gray-700 text-sm font-medium mb-1">
                             Price
@@ -186,7 +186,7 @@ const AddAToy = () => {
                     <input
                         type="submit"
                         value='Add Toy'
-                        className="w-full bg-purple-500 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                        className="w-full bg-purple-500 hover:cursor-pointer text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
                     />
 
 

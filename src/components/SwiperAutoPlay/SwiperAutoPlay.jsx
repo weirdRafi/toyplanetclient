@@ -4,7 +4,7 @@ import 'swiper/css';
 const SwiperAutoPlay = () => {
     return (
         <div>
-            <h1 className='text-2xl md:text-4xl font-bold mt-5 mb-5 text-center text-purple-700'>Just Swipe And See More Toy Cars</h1>
+            <h1 className='text-2xl md:text-4xl font-bold mt-10 mb-10 text-center text-purple-700'>Just Swipe And See More Toy Cars</h1>
             <Swiper
                 spaceBetween={50}
                 slidesPerView={3}

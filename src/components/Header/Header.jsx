@@ -14,7 +14,7 @@ const Header = () => {
             });
     }
     return (
-        <div className="navbar bg-base-100 shadow-lg sticky top-0 z-10">
+        <div className="navbar bg-base-100 text-purple-700 shadow-lg sticky top-0 z-10">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -23,8 +23,10 @@ const Header = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/alltoys'>All Toys</Link></li>
-                        <li><Link to='/mytoys'>My Toys</Link></li>
-                        <li><Link to='/addatoy'>Add a Toy</Link></li>
+
+                        {user && <><li><Link to='/mytoys'>My Toys</Link></li>
+                            <li><Link to='/addatoy'>Add a Toy</Link></li></>}
+
                         <li><Link to='/blogs'>Blogs</Link></li>
                     </ul>
                 </div>
@@ -35,8 +37,8 @@ const Header = () => {
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/alltoys'>All Toys</Link></li>
 
-                  {user && <><li><Link to='/mytoys'>My Toys</Link></li>
-                    <li><Link to='/addatoy'>Add a Toy</Link></li></>  }
+                    {user && <><li><Link to='/mytoys'>My Toys</Link></li>
+                        <li><Link to='/addatoy'>Add a Toy</Link></li></>}
 
                     <li><Link to='/blogs'>Blogs</Link></li>
                 </ul>

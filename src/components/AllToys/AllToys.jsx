@@ -31,7 +31,7 @@ const AllToys = () => {
                         className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none"
                         placeholder="Search..."
                     />
-                    <button onClick={handleSearch} className="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600 focus:outline-none">
+                    <button onClick={handleSearch} className="px-4 py-2 bg-purple-500 text-white rounded-r-md hover:bg-purple-700 ">
                         Search
                     </button>
 

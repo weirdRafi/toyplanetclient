@@ -18,9 +18,11 @@ const Home = () => {
         });
     }, []);
     return (
-        <div><div data-aos="fade-down">
-            <h1 className='text-purple-700 text-2xl text-center mt-5 font-bold'>Welcome To ToyPlanet!!</h1>
-        </div>
+       
+        <div className='w-10/12 mx-auto'>
+            <div data-aos="fade-down">
+                <h1 className='text-purple-700 text-2xl text-center mt-5 font-bold'>Welcome To ToyPlanet!!</h1>
+            </div>
             <Carousel></Carousel>
             <section className='mt-10'>
                 <h1 className='text-4xl font-bold mt-5 mb-10 text-center text-purple-700'>Gellary section</h1>
