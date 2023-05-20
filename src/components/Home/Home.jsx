@@ -8,8 +8,10 @@ import 'aos/dist/aos.css';
 import Rivew from '../Rivew/Rivew';
 import ImageGellary from '../ImageGellary/ImageGellary';
 import Slider from '../Slider/Slider';
+import useTitle from '../../hooks/useTitle';
 
 const Home = () => {
+    useTitle('Home');
     useEffect(() => {
         AOS.init({
             duration: 1000, // Set the duration for animations (in milliseconds)

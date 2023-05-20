@@ -6,8 +6,10 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
+    useTitle('Login')
     const { loginUser} = useContext(AuthContext)
     const [error, setError] = useState('')
     const googleProvider = new GoogleAuthProvider()

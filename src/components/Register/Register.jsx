@@ -2,11 +2,12 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
     const { registerUser } = useContext(AuthContext)
     const [error, setError] = useState('')
-
+    useTitle('Register')
 
 
 
