@@ -7,8 +7,16 @@ import useTitle from '../../hooks/useTitle';
 const MyToys = () => {
     const { user } = useContext(AuthContext)
     const [mytoys, setMytoys] = useState([])
+    const [sortingOrder, setSortingOrder] = useState("desc")
+
+
+    const handleShorting = (event) => {
+        setSortingOrder(event.target.value)
+    }
+
+
     useTitle('MyToys')
-    const url = `http://localhost:3000/alltoys?sellerEmail=${user.email}`
+    const url = `http://localhost:3000/alltoys?sellerEmail=${user.email}&sort=${sortingOrder}`
 
     useEffect(() => {
         fetch(url)
@@ -18,7 +26,7 @@ const MyToys = () => {
 
                 setMytoys(data);
             })
-    }, [url])
+    }, [url,sortingOrder])
 
     const handleDelete = (_id) => {
 
@@ -34,7 +42,7 @@ const MyToys = () => {
         }).then((result) => {
             if (result.isConfirmed) {
              
-                fetch(`http://localhost:3000/sigletoy/${_id}`, {
+                fetch(`https://toy-marketplace-server-sooty.vercel.app/sigletoy/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -53,55 +61,24 @@ const MyToys = () => {
         })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // console.log(_id);
-        // fetch(`http://localhost:3000/sigletoy/${_id}`, {
-        //     method: 'DELETE'
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data.deletedCount > 0) {
-        //             Swal.fire({
-        //                 title: 'Are you sure?',
-        //                 text: "You won't be able to revert this!",
-        //                 icon: 'warning',
-        //                 showCancelButton: true,
-        //                 confirmButtonColor: '#3085d6',
-        //                 cancelButtonColor: '#d33',
-        //                 confirmButtonText: 'Yes, delete it!'
-        //             }).then((result) => {
-        //                 if (result.isConfirmed) {
-        //                     Swal.fire(
-        //                         'Deleted!',
-        //                         'Your file has been deleted.',
-        //                         'success'
-        //                     )
-        //                     const remaining = mytoys.filter(mytoy => mytoy._id !== _id)
-        //                     setMytoys(remaining)
-        //                 }
-        //             })
-        //         }
-        //     })
     }
 
     return (
         <div>
             <div className='h-screen'>
+                <div className='sorting-dropdown my-3 text-end mr-5'>
+                    <label htmlFor='sorting-order'>
+                        Sort by: &nbsp;
+                    </label>
+                    <select id="sorting-order" value={sortingOrder} onChange={handleShorting}>
+                        <option value="desc">
+                            Descending
+                        </option>
+                        <option value="asc">
+                            Ascending
+                        </option>
+                    </select>
+                </div>
                 <table className="w-full border-collapse">
                     <thead>
                         <tr>
@@ -116,19 +93,19 @@ const MyToys = () => {
                     </thead>
                     <tbody className='text-center'>
                         {mytoys.map((toy) => (
-                            <tr key={toy._id}>
-                                <td className="py-2 px-4 border-b text-sm">{toy.sellerName}</td>
-                                <td className="py-2 px-4 border-b text-sm">{toy.name}</td>
-                                <td className="py-2 px-4 border-b text-sm">{toy.subcategory}</td>
-                                <td className="py-2 px-4 border-b text-sm">$ {toy.price}</td>
-                                <td className="py-2 px-4 border-b text-sm">{toy.quantity}</td>
+                            <tr key={toy?._id}>
+                                <td className="py-2 px-4 border-b text-sm">{toy?.sellerName}</td>
+                                <td className="py-2 px-4 border-b text-sm">{toy?.name}</td>
+                                <td className="py-2 px-4 border-b text-sm">{toy?.subcategory}</td>
+                                <td className="py-2 px-4 border-b text-sm">$ {toy?.price}</td>
+                                <td className="py-2 px-4 border-b text-sm">{toy?.quantity}</td>
                                 <td className="py-2 px-4 border-b text-sm">
-                                    <Link to={`/update/${toy._id}`} className="bg-purple-500 hover:bg-purple-600 text-white py-1 px-3 rounded-md">
+                                    <Link to={`/update/${toy?._id}`} className="bg-purple-500 hover:bg-purple-600 text-white py-1 px-3 rounded-md">
                                         Update
                                     </Link>
                                 </td>
                                 <td className="py-2 px-4 border-b text-sm">
-                                    <button onClick={() => handleDelete(toy._id)} className="bg-purple-500 hover:bg-purple-600 text-white py-1 px-3 rounded-md">
+                                    <button onClick={() => handleDelete(toy?._id)} className="bg-purple-500 hover:bg-purple-600 text-white py-1 px-3 rounded-md">
                                         Delete
                                     </button>
                                 </td>

@@ -26,6 +26,7 @@ const Register = () => {
 
             return
         }
+        
         else if(email, password){
             registerUser(email, password)
             .then(result => {
@@ -37,12 +38,20 @@ const Register = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                   })
+   
             })
             .catch(err => {
                 setError(err);
             })
         }
+
+      
+
+
+    
     }
+   
+
     return (
         <div>
             <div className="min-h-screen bg-gray-100 flex items-center justify-center">

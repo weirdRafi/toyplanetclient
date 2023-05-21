@@ -9,7 +9,7 @@ const Subcategory = () => {
     
 
     useEffect(() => {
-        fetch(`http://localhost:3000/alltoys/${active}`)
+        fetch(`https://toy-marketplace-server-sooty.vercel.app/alltoys/${active}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -56,7 +56,7 @@ const Subcategory = () => {
                 </div>
                 <div className=" mt-5 md:grid grid-cols-3">
                     {
-                        toys.map(toy => <Toy key={toy._id} toy={toy}></Toy>)
+                        toys?.map(toy => <Toy key={toy?._id} toy={toy}></Toy>)
                     }
                 </div>
             </div>

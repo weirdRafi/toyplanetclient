@@ -17,7 +17,7 @@ const Update = () => {
             quantity,
             description
         }
-        fetch(`http://localhost:3000/update/${updatedToy._id}`,{
+        fetch(`https://toy-marketplace-server-sooty.vercel.app/update/${updatedToy._id}`,{
             method: 'PATCH',
             headers:{
                 "content-type": "application/json"

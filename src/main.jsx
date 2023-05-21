@@ -38,7 +38,7 @@ const router = createBrowserRouter([
       {
         path: 'singleToy/:id',
         element: <PrivateRoute><SingleToy></SingleToy></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:3000/singletoy/${params.id}`)
+        loader: ({params})=> fetch(`https://toy-marketplace-server-sooty.vercel.app/singletoy/${params.id}`)
       },
       {
         path: 'mytoys',
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
       {
         path: 'update/:id',
         element: <Update></Update>,
-        loader: ({params}) => fetch(`http://localhost:3000/singletoy/${params.id}`)
+        loader: ({params}) => fetch(`https://toy-marketplace-server-sooty.vercel.app/${params.id}`)
       },
       {
         path: 'addatoy',

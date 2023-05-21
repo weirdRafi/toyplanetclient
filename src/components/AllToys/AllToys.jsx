@@ -8,7 +8,7 @@ const AllToys = () => {
     useTitle('AllToys')
 
     useEffect(() => {
-        fetch('http://localhost:3000/alltoys')
+        fetch('https://toy-marketplace-server-sooty.vercel.app/alltoys')
             .then(res => res.json())
             .then(data => {
                 setToys(data);
@@ -16,7 +16,7 @@ const AllToys = () => {
     }, [])
 
     const handleSearch = () => {
-        fetch(`http://localhost:3000/toySearch/${Search}`)
+        fetch(`https://toy-marketplace-server-sooty.vercel.app/toySearch/${Search}`)
             .then(res => res.json())
             .then(data => {
                 setToys(data);
@@ -51,15 +51,15 @@ const AllToys = () => {
                     </tr>
                 </thead>
                 <tbody className='text-center'>
-                    {toys.map((toy) => (
-                        <tr key={toy._id}>
-                            <td className="py-2 px-4 border-b text-sm">{toy.sellerName}</td>
-                            <td className="py-2 px-4 border-b text-sm">{toy.name}</td>
-                            <td className="py-2 px-4 border-b text-sm">{toy.subcategory}</td>
-                            <td className="py-2 px-4 border-b text-sm">$ {toy.price}</td>
-                            <td className="py-2 px-4 border-b text-sm">{toy.quantity}</td>
+                    {toys?.map((toy) => (
+                        <tr key={toy?._id}>
+                            <td className="py-2 px-4 border-b text-sm">{toy?.sellerName}</td>
+                            <td className="py-2 px-4 border-b text-sm">{toy?.name}</td>
+                            <td className="py-2 px-4 border-b text-sm">{toy?.subcategory}</td>
+                            <td className="py-2 px-4 border-b text-sm">$ {toy?.price}</td>
+                            <td className="py-2 px-4 border-b text-sm">{toy?.quantity}</td>
                             <td className="py-2 px-4 border-b text-sm">
-                                <Link to={`/singleToy/${toy._id}`} className="bg-purple-500 hover:bg-purple-600 text-white py-1 px-3 rounded-md">
+                                <Link to={`/singleToy/${toy?._id}`} className="bg-purple-500 hover:bg-purple-600 text-white py-1 px-3 rounded-md">
                                     View Details
                                 </Link>
                             </td>

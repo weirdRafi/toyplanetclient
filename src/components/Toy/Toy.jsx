@@ -21,7 +21,7 @@ const Toy = ({ toy }) => {
                     
                 </div>
                 <div className='text-center'>
-                    <Link to={`singleToy/${toy._id}`} className='btn bg-purple-700 w-full'>View Details</Link>
+                    <Link to={`singleToy/${toy._id}`} className='btn bg-purple-500 hover:bg-purple-700 w-full'>View Details</Link>
                 </div>
             </div>
         </div>
