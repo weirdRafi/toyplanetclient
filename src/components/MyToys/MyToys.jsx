@@ -16,7 +16,7 @@ const MyToys = () => {
 
 
     useTitle('MyToys')
-    const url = `http://localhost:3000/alltoys?sellerEmail=${user.email}&sort=${sortingOrder}`
+    const url = `https://toy-marketplace-server-sooty.vercel.app/alltoys?sellerEmail=${user.email}&sort=${sortingOrder}`
 
     useEffect(() => {
         fetch(url)

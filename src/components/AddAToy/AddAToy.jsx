@@ -37,7 +37,7 @@ const AddAToy = () => {
 
         console.log(user);
 
-        fetch('http://localhost:3000/upload', {
+        fetch('https://toy-marketplace-server-sooty.vercel.app/upload', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

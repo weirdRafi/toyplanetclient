@@ -31,8 +31,10 @@ const Header = () => {
                         <li><Link to='/blogs'>Blogs</Link></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl"><img className='w-20' src="/public/logo.png" alt="" /><strong className='text-purple-500'>ToyPlanet</strong></a>
+                <a className="btn btn-ghost normal-case text-xl"><img className='w-20' src="https://i.ibb.co/SJcKndL/logo.png" alt="" /><strong className='text-purple-500'>ToyPlanet</strong></a>
             </div>
+
+
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li><Link to='/'>Home</Link></li>
